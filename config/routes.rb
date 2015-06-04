@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'blogs/:id' => 'blogs#show', as: :blog
   get 'blogs/:id/edit' => 'blogs#edit', as: :edit_blog
   patch 'blogs/:id' => 'blogs#update'
+  delete 'blogs/:id' => 'blogs#delete'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
