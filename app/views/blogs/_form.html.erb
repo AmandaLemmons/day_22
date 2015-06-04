@@ -1,0 +1,14 @@
+<%= form_for @blog do |b| %>
+
+  <div>
+    <h5> Please enter the Title of the Blog</h5>
+      <%= b.text_field :title %>
+
+    <h5> Please enter the text</h5>
+      <%= b.text_area :body %>
+
+  </div>
+
+  <%= b.submit %>
+
+  <%end%>

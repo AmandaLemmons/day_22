@@ -1,0 +1,13 @@
+<h1>Taylor's Best Blog Posts</h1>
+
+<%= link_to 'Add New Blog Post', new_blog_path %>
+
+<!-- < link_to 'Edit', edit_blog_path(id: blog.id)  -->
+
+<ul>
+<% @blogs.each do |blog| %>
+  <li><%= link_to blog.title, blog_path(id: blog.id) %></li>
+  <p> <%= truncate(blog.body) %> </p>
+<% end %>
+
+</ul>

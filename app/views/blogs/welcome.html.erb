@@ -1,9 +1,0 @@
-<h1>Posts</h1>
-
-<ul>
-<% @blogs.each do |blog| %>
-  <li><%= link_to blog.title, blogs_path(id: blog.id) %></li>
-  <p> <%= truncate(blog.body) %> </p>
-<% end %>
-
-</ul>
