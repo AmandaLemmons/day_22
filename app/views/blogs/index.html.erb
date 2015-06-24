@@ -1,13 +1,23 @@
-<h1>Taylor's Best Blog Posts</h1>
+<div class="jumbotron">
+  <h1>Climbing your way to the top</h1>
+    <p><a class="btn btn-primary btn-lg"<%= link_to 'Add New Blog Post', new_blog_path %></p> </a>
+</div>
+<div class="row">
 
-<%= link_to 'Add New Blog Post', new_blog_path %>
+  <% @blogs.each do |blog| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag blog.image %>
+          <div class="caption">
+            <h3><%=blog.title %></h3>
+            <p> <%=truncate("#{blog.body}" , length: 80) %> </p>
+              <a class="btn btn-primary btn-md" <%= link_to 'Read the Post', blog_path(id: blog.id)%>
+          </div>
+        </div>
+      </div>
 
-<!-- < link_to 'Edit', edit_blog_path(id: blog.id)  -->
+            <% end %>
 
-<ul>
-<% @blogs.each do |blog| %>
-  <li><%= link_to blog.title, blog_path(id: blog.id) %></li>
-  <p> <%= truncate(blog.body) %> </p>
-<% end %>
 
-</ul>
+
+</div>
